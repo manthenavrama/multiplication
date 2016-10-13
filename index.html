@@ -8,12 +8,15 @@
 
 <script>
 
-        function mul(a,b,c) {
-            return (a*b*c);
+        function mul(a) {
+            return function (b) {
+                return function (c) {
+                    return a * b * c;
+                };
+            };
         }
-        var x = mul(2,3,4)
+        var x = mul(2)(3)(4);
         alert(x == 24)
 </script>
-
 </body>
 </html>
